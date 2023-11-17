@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    STLINK LOGIN PAGE: Portfolio
+{% endblock %}
+
+
+<!--{% block body %}-->
+<!--{%endblock %}-->
+
+{% block main %}
+
+<p>Click on the logo to download the hex file:<p>
+
+<!-- <a href="/static/blinkLed(app1).hex" download> -->
+  <!-- <a href="/static/Fingerprintv3.hex" download="Fingerprintv3.hex">
+    <img src="/static/download.jpg" alt="download link" width="150" height="150">
+  </a> -->
+
+  <a href="#" onclick="downloadFiles()">
+    <img src="/static/download.jpg" alt="download link" width="150" height="150">
+  </a>
+
+  <script>
+    function downloadFiles() {
+      var link1 = document.createElement('a');
+      link1.href = '/static/Fingerprintv3.hex';
+      link1.download = 'Fingerprintv3.hex';
+      link1.click();
+
+      var link2 = document.createElement('a');
+      link2.href = '/static/update_hash.txt';
+      link2.download = 'update_hash.txt';
+      link2.click();
+    }
+  </script>
+
+
+
+{% endblock %}
